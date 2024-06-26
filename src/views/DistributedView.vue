@@ -1,28 +1,22 @@
 <script setup>
 import {ref} from "vue"
-import { ElMessage } from 'element-plus'
-const percentage = ref(10)//进度条
+
+import AlgorithmList from '@/components/AlgorithmList.vue';
+import { useRouter } from "vue-router";
+
+// 算法内容
+const algorithms = ref([
+  { name: '天际线查询算法', dataVolume: '...', dimensions: '...' ,api:""},
+  { name: '相似性查询算法', dataVolume: '...', dimensions: '...' ,api:""},
+  { name: '反向相似性查询算法', dataVolume: '...', dimensions: '...' ,api:""},
+  { name: '关键字查询算法', dataVolume: '...', dimensions: '...' ,api:""},
+  { name: '范围查询算法', dataVolume: '...', dimensions: '...' ,api:""}
+]);
+
+const router = useRouter();
 const goBack = () => {
-
-}
-
-//上传成功后调用
-const uploadSuccess = () => {
-  ElMessage({
-    message: 'Congrats, this is a success message.',
-    type: 'success',
-  })
-}
-
-//上传按钮点击
-const upload = () => {
-
-}
-
-//下载按钮点击
-const download = () => {
-
-}
+  router.go(-1); // 返回上一个路由
+};
 </script>
 <template>
   <div>
@@ -30,90 +24,21 @@ const download = () => {
       <el-header class="container-center">
         <el-page-header @back="goBack" class="page-header-with-border">
           <template #content>
-            <span class="text-large-center" > 分布式数据处理算法 </span>
+            <span class="text-large-center" > 分布式数据查询算法 </span>
           </template>
         </el-page-header>
       </el-header>
       <el-main>
-        <el-scrollbar height="400px">
-          <div class="upload-main">
-            <div class="title">
-              <div>天际线查询算法</div>
-              <div>
-                <el-tooltip
-                    class="box-item"
-                    effect="dark"
-                    content="提示格式"
-                    placement="top-start"
-                >文件格式实例<el-icon><ChatSquare /></el-icon></el-tooltip>
-              </div>
-            </div>
-            <div class="operator">
-              <el-button @click="upload" type="primary">上传文件</el-button>
-              <el-button @click="download" type="success">下载结果</el-button>
-            </div>
-            <div class="progress"><el-progress :text-inside="true" :stroke-width="26" :percentage="percentage" /></div>
-          </div>
-          <div class="upload-main">
-            <div class="title">
-              <div>天际线查询算法</div>
-              <div>
-                <el-tooltip
-                    class="box-item"
-                    effect="dark"
-                    content="提示格式"
-                    placement="top-start"
-                >文件格式实例<el-icon><ChatSquare /></el-icon></el-tooltip>
-              </div>
-            </div>
-            <div class="operator">
-              <el-button @click="upload" type="primary">上传文件</el-button>
-              <el-button @click="download" type="success">下载结果</el-button>
-            </div>
-            <div class="progress"><el-progress :text-inside="true" :stroke-width="26" :percentage="percentage" /></div>
-          </div>
-          <div class="upload-main">
-            <div class="title">
-              <div>天际线查询算法</div>
-              <div>
-                <el-tooltip
-                    class="box-item"
-                    effect="dark"
-                    content="提示格式"
-                    placement="top-start"
-                >文件格式实例<el-icon><ChatSquare /></el-icon></el-tooltip>
-              </div>
-            </div>
-            <div class="operator">
-              <el-button @click="upload" type="primary">上传文件</el-button>
-              <el-button @click="download" type="success">下载结果</el-button>
-            </div>
-            <div class="progress"><el-progress :text-inside="true" :stroke-width="26" :percentage="percentage" /></div>
-          </div>
-          <div class="upload-main">
-            <div class="title">
-              <div>天际线查询算法</div>
-              <div>
-                <el-tooltip
-                    class="box-item"
-                    effect="dark"
-                    content="提示格式"
-                    placement="top-start"
-                >文件格式实例<el-icon><ChatSquare /></el-icon></el-tooltip>
-              </div>
-            </div>
-            <div class="operator">
-              <el-button @click="upload" type="primary">上传文件</el-button>
-              <el-button @click="download" type="success">下载结果</el-button>
-            </div>
-            <div class="progress"><el-progress :text-inside="true" :stroke-width="26" :percentage="percentage" /></div>
-          </div>
-        </el-scrollbar>
+        <algorithm-list :algorithms="algorithms" />
       </el-main>
     </el-container>
 
   </div>
 </template>
+
+<script>
+
+</script>
 <style scoped>
 .container-center {
   display: flex;
@@ -130,40 +55,4 @@ const download = () => {
   font-size: 24px; /* 调整文本大小 */
 }
 
-.scrollbar-demo-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 50px;
-  margin: 10px;
-  text-align: center;
-  border-radius: 4px;
-  background: var(--el-color-primary-light-9);
-  color: var(--el-color-primary);
-}
-.upload-main{
-  width: 60%;
-  margin: 20px auto;
-  border: 1px solid #5e949b;
-  min-height: 200px;
-  padding: 30px 50px;
-  box-sizing: border-box;
-  position: relative;
-}
-.operator{
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
-.progress{
-  position: absolute;
-  bottom: 10px;
-  left: 30px;
-  width:90%;
-}
-.title{
-  display: flex;
-  justify-content: space-between;
-  margin: 20px 0;
-}
 </style>
