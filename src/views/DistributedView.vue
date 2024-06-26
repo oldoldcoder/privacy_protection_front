@@ -1,5 +1,26 @@
 <script setup>
+import {ref} from "vue"
+import { ElMessage } from 'element-plus'
+const percentage = ref(10)//进度条
 const goBack = () => {
+
+}
+
+//上传成功后调用
+const uploadSuccess = () => {
+  ElMessage({
+    message: 'Congrats, this is a success message.',
+    type: 'success',
+  })
+}
+
+//上传按钮点击
+const upload = () => {
+
+}
+
+//下载按钮点击
+const download = () => {
 
 }
 </script>
@@ -15,7 +36,78 @@ const goBack = () => {
       </el-header>
       <el-main>
         <el-scrollbar height="400px">
-          <p v-for="item in 20" :key="item" class="scrollbar-demo-item">{{ item }}</p>
+          <div class="upload-main">
+            <div class="title">
+              <div>天际线查询算法</div>
+              <div>
+                <el-tooltip
+                    class="box-item"
+                    effect="dark"
+                    content="提示格式"
+                    placement="top-start"
+                >文件格式实例<el-icon><ChatSquare /></el-icon></el-tooltip>
+              </div>
+            </div>
+            <div class="operator">
+              <el-button @click="upload" type="primary">上传文件</el-button>
+              <el-button @click="download" type="success">下载结果</el-button>
+            </div>
+            <div class="progress"><el-progress :text-inside="true" :stroke-width="26" :percentage="percentage" /></div>
+          </div>
+          <div class="upload-main">
+            <div class="title">
+              <div>天际线查询算法</div>
+              <div>
+                <el-tooltip
+                    class="box-item"
+                    effect="dark"
+                    content="提示格式"
+                    placement="top-start"
+                >文件格式实例<el-icon><ChatSquare /></el-icon></el-tooltip>
+              </div>
+            </div>
+            <div class="operator">
+              <el-button @click="upload" type="primary">上传文件</el-button>
+              <el-button @click="download" type="success">下载结果</el-button>
+            </div>
+            <div class="progress"><el-progress :text-inside="true" :stroke-width="26" :percentage="percentage" /></div>
+          </div>
+          <div class="upload-main">
+            <div class="title">
+              <div>天际线查询算法</div>
+              <div>
+                <el-tooltip
+                    class="box-item"
+                    effect="dark"
+                    content="提示格式"
+                    placement="top-start"
+                >文件格式实例<el-icon><ChatSquare /></el-icon></el-tooltip>
+              </div>
+            </div>
+            <div class="operator">
+              <el-button @click="upload" type="primary">上传文件</el-button>
+              <el-button @click="download" type="success">下载结果</el-button>
+            </div>
+            <div class="progress"><el-progress :text-inside="true" :stroke-width="26" :percentage="percentage" /></div>
+          </div>
+          <div class="upload-main">
+            <div class="title">
+              <div>天际线查询算法</div>
+              <div>
+                <el-tooltip
+                    class="box-item"
+                    effect="dark"
+                    content="提示格式"
+                    placement="top-start"
+                >文件格式实例<el-icon><ChatSquare /></el-icon></el-tooltip>
+              </div>
+            </div>
+            <div class="operator">
+              <el-button @click="upload" type="primary">上传文件</el-button>
+              <el-button @click="download" type="success">下载结果</el-button>
+            </div>
+            <div class="progress"><el-progress :text-inside="true" :stroke-width="26" :percentage="percentage" /></div>
+          </div>
         </el-scrollbar>
       </el-main>
     </el-container>
@@ -48,5 +140,30 @@ const goBack = () => {
   border-radius: 4px;
   background: var(--el-color-primary-light-9);
   color: var(--el-color-primary);
+}
+.upload-main{
+  width: 60%;
+  margin: 20px auto;
+  border: 1px solid #5e949b;
+  min-height: 200px;
+  padding: 30px 50px;
+  box-sizing: border-box;
+  position: relative;
+}
+.operator{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+.progress{
+  position: absolute;
+  bottom: 10px;
+  left: 30px;
+  width:90%;
+}
+.title{
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
 }
 </style>
