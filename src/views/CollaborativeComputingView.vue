@@ -6,10 +6,10 @@ import { useRouter } from "vue-router";
 
 // 算法内容
 const algorithms = ref([
-  { name: '均值和最值计算', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '数据比较和相等性测试', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '数据分享和频率计算', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '包含关系和范围相交', dataVolume: '...', dimensions: '...' ,api:""},
+  { name: '均值和最值计算', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false},
+  { name: '数据比较和相等性测试', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false},
+  { name: '数据分享和频率计算', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false},
+  { name: '包含关系和范围相交', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false},
 ]);
 
 const router = useRouter();
