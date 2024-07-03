@@ -6,11 +6,11 @@ import {useRouter} from "vue-router";
 
 // 算法内容
 const algorithms = ref([
-  { name: '天际线查询算法（非分布式）', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '相似性查询算法（非分布式）', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '反向相似性查询算法（非分布式）', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '关键字查询算法（非分布式）', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '范围查询算法（非分布式）', dataVolume: '...', dimensions: '...' ,api:""}
+  { name: '天际线查询算法（非分布式）', dataVolume: '...', dimension: '...' ,baseApi:"/ND/skyline",loading:false,querying:false, useParamQuery:true},
+  { name: '相似性查询算法（非分布式）', dataVolume: '...', dimension: '...' ,baseApi:"/ND/ssq",loading:false,querying:false, useParamQuery:false},
+  { name: '反向相似性查询算法（非分布式）', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false,querying:false, useParamQuery:true},
+  { name: '关键字查询算法（非分布式）', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false,querying:false, useParamQuery:true},
+  { name: ' 范围查询算法（非分布式）', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false,querying:false, useParamQuery:true},
 ]);
 
 const router = useRouter();

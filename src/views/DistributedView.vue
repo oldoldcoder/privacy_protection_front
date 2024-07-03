@@ -6,11 +6,12 @@ import { useRouter } from "vue-router";
 
 // 算法内容
 const algorithms = ref([
-  { name: '天际线查询算法', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '相似性查询算法', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '反向相似性查询算法', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '关键字查询算法', dataVolume: '...', dimensions: '...' ,api:""},
-  { name: '范围查询算法', dataVolume: '...', dimensions: '...' ,api:""}
+
+  { name: '天际线查询算法', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false,querying:false, useParamQuery:true},
+  { name: '相似性查询算法', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false,querying:false, useParamQuery:true},
+  { name: '反向相似性查询算法', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false,querying:false, useParamQuery:true},
+  { name: '关键字查询算法', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false,querying:false, useParamQuery:true},
+  { name: '范围查询算法', dataVolume: '...', dimension: '...' ,baseApi:"",loading:false,querying:false, useParamQuery:true},
 ]);
 
 const router = useRouter();
