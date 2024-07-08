@@ -4,9 +4,6 @@ import {defineProps, ref} from 'vue';
 import {ElButton, ElDialog, ElMessage} from "element-plus";
 import axios from 'axios';
 
-// 设置同源携带凭证
-axios.defaults.withCredentials = true;
-
 // 定义 props，接收父组件传递过来的 algorithms 数组
 const props = defineProps({
   algorithms: Array,
@@ -168,24 +165,22 @@ const paramFileUpload = (index,event) =>{
   // 发送查询文件
   axios.post(`${apiBaseUrl}${baseApi}/query`, formData,{withCredentials: true})
       .then(response => {
-        const data = response.data;
 
-        // 获取文件数据
-        const fileBlob = new Blob([response.data], { type: 'application/octet-stream' });
-
-        // 保存文件
-        const downloadLink = document.createElement('a');
-        downloadLink.href = window.URL.createObjectURL(fileBlob);
-        downloadLink.setAttribute('download', 'filename.ext'); // 设置文件名
-        document.body.appendChild(downloadLink);
-        downloadLink.click();
-        document.body.removeChild(downloadLink);
-
-        if (data.success) {
+        if (response.status === 200) {
           ElMessage({
             message: '文件查询成功',
             type: 'success',
           })
+          // 获取文件数据
+          const fileBlob = new Blob([response.data], { type: 'application/octet-stream' });
+
+          // 保存文件
+          const downloadLink = document.createElement('a');
+          downloadLink.href = window.URL.createObjectURL(fileBlob);
+          downloadLink.setAttribute('download', 'filename.ext'); // 设置文件名
+          document.body.appendChild(downloadLink);
+          downloadLink.click();
+          document.body.removeChild(downloadLink);
         } else {
           ElMessage({
             message: '文件查询失败' + response.data,
