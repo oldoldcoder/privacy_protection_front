@@ -289,7 +289,6 @@ const handleFileChange = (index,event) => {
               trigger="hover"
               :content="algorithm.content"
           >
-
             <template #reference>
               <div v-html="svgIcon" class="svg-icon"></div>
             </template>
