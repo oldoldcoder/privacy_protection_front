@@ -9,7 +9,7 @@ const algorithms = ref([
   { loading:false,name: '均值计算',content:"文件格式：文件中存入n个数据，按行分隔 \n结果值：n个数据的平均值" ,baseApi:"/dd/scc/avg"},
   { loading:false,name: '数据比较', content:"文件格式：文件中存入2个数据，按行分隔 \n结果值：true:x1 > x2;false:x1 <= x2" ,baseApi:"/dd/scc/compare"},
 
-  { loading:false,name: '相等测试', content:"文件格式：文件中存2个数据，按行分隔\n结果值：true:x1 == x2;false:x1 != x2\"" ,baseApi:"/dd/scc/equal"},
+  { loading:false,name: '相等测试', content:"文件格式：文件中存2个数据，按行分隔\n结果值：true:x1 == x2;false:x1 != x2" ,baseApi:"/dd/scc/equal"},
   { loading:false,name: '最值计算', content:"文件格式：文件中存n个数据，按行分隔\n结果值：返回结果的最大值" ,baseApi:"/dd/scc/min_max"},
 
   { loading:false,name: '频率计算',content:"文件格式：文件存入两行数据，第一行存入一个数据表示k，第二行存入n个数据，每个数据按空格分隔\n结果值：返回每个分箱的频数" ,baseApi:"/dd/scc/frequency"},
