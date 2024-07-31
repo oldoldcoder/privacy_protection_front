@@ -1,6 +1,6 @@
 <template>
   <el-aside class="sidebar" :class="{ 'is-visible': !isCollapse }" width="200px">
-    <el-menu router :default-active="$route.path" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
+    <el-menu router :default-active="$route.path" class="el-menu-vertical-demo removeIndex" :collapse="isCollapse" @open="handleOpen" @close="handleClose">
         <el-menu-item index="/" >
           <el-icon><location /></el-icon>
           <span>home</span>
@@ -39,5 +39,8 @@ const { isCollapse, handleOpen, handleClose } = defineProps(['isCollapse', 'hand
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: auto;
   min-height: auto;
+}
+.removeIndex{
+  caret-color: transparent
 }
 </style>

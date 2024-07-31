@@ -11,7 +11,7 @@ const algorithms = ref([
   { name: '相似性查询算法', dataVolume: '...', dimension: '...' ,baseApi:"/DD/ssq",loading:false,querying:false, useParamQuery:false},
   { name: '反向相似性查询算法', dataVolume: '...', dimension: '...' ,baseApi:"/DD/rsq",loading:false,querying:false, useParamQuery:false},
   { name: '关键字查询算法', dataVolume: '...', dimension: '...' ,baseApi:"/DD/skq",loading:false,querying:false, useParamQuery:false},
-  { name: ' 范围查询算法', dataVolume: '...', dimension: '...' ,baseApi:"/DD/drq",loading:false,querying:false, useParamQuery:false},
+  { name: '范围查询算法', dataVolume: '...', dimension: '...' ,baseApi:"/DD/drq",loading:false,querying:false, useParamQuery:false},
 
 ]);
 

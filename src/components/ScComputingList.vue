@@ -1,5 +1,5 @@
 <script setup>
-const apiBaseUrl = import.meta.env.VITE_API_BASE_URL;
+const apiBaseUrl = "http://10.10.55.25:8082";
 import {defineProps, ref} from 'vue';
 import {ElButton, ElMessage} from "element-plus";
 import axios from 'axios';
