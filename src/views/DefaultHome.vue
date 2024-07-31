@@ -11,8 +11,11 @@
         <div class="features-section">
           <h2>特点：</h2>
           <el-carousel :interval="4000" type="card" height="200px">
-            <el-carousel-item v-for="item in 6" :key="item">
+            <!-- <el-carousel-item v-for="item in 6" :key="item">
               <h3 text="2xl" justify="center">{{ item }}</h3>
+            </el-carousel-item> -->
+            <el-carousel-item v-for="(item, index) in images" :key="index">
+              <img :src="item" class="carousel-image" alt="Feature Image">
             </el-carousel-item>
           </el-carousel>
         </div>
@@ -24,6 +27,20 @@
 <script>
 export default {
   // 组件逻辑
+  // import logo from '@/assets/img.png';
+  data() {
+    return {
+      images: [
+        'src/assets/1.jpg',
+        'src/assets/2.jpg',
+        'src/assets/3.jpg',
+        'src/assets/4.jpg',
+        'src/assets/5.jpg',
+        'src/assets/6.jpg'
+      ]
+    }
+  }
+
 }
 </script>
 
@@ -61,13 +78,15 @@ export default {
 #cancelInsert{
   caret-color: transparent;
 }
-.el-carousel__item h3 {
+
+
+/* .el-carousel__item h3 {
   color: #475669;
   opacity: 0.75;
   line-height: 200px;
   margin: 0;
   text-align: center;
-}
+} */
 
 .el-carousel__item:nth-child(2n) {
   background-color: #99a9bf;
@@ -75,5 +94,15 @@ export default {
 
 .el-carousel__item:nth-child(2n + 1) {
   background-color: #d3dce6;
+}
+
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.el-carousel__item {
+  padding: 0; /* 去除默认内边距 */
 }
 </style>
