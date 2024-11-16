@@ -25,18 +25,25 @@
 </template>
 
 <script>
+import i1 from '@/assets/i1.jpg';
+import i2 from '@/assets/i2.jpg';
+import i3 from '@/assets/i3.jpg';
+import i4 from '@/assets/i4.jpg';
+import i5 from '@/assets/i5.jpg';
+import i6 from '@/assets/i6.jpg';
+
 export default {
   // 组件逻辑
   // import logo from '@/assets/img.png';
   data() {
     return {
       images: [
-        'src/assets/1.jpg',
-        'src/assets/2.jpg',
-        'src/assets/3.jpg',
-        'src/assets/4.jpg',
-        'src/assets/5.jpg',
-        'src/assets/6.jpg'
+        i1,
+          i2,
+          i3,
+          i4,
+          i5,
+          i6
       ]
     }
   }
